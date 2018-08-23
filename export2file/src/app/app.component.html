@@ -1,0 +1,25 @@
+<button type="button" (click)="fetchData()">获取数据</button>
+<button type="button" (click)="exportExcel()">导出Excel</button>
+<table #tableTpl id="example" class="display" style="width:100%">
+  <thead>
+    <tr>
+      <th rowspan="2">项目名称</th>
+      <th colspan="4">人员分配</th>
+    </tr>
+    <tr>
+      <th>前端</th>
+      <th>后端</th>
+      <th>美工</th>
+      <th>项目经理</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="data.length > 0">
+    <tr *ngFor="let item of data">
+      <td>{{item.pname}}</td>
+      <td>{{item.fe}}</td>
+      <td>{{item.be}}</td>
+      <td>{{item.art}}</td>
+      <td>{{item.manager}}</td>
+    </tr>
+  </tbody>
+</table>
